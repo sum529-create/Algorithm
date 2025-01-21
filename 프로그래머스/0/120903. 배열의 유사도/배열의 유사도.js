@@ -1,9 +1,5 @@
 function solution(s1, s2) {
-    let answer = 0;
-    for(let i=0; i<s1.length; i++){
-        for(let j=0; j<s2.length; j++){
-            s1[i] === s2[j] && answer++;
-        }
-    }
-    return answer;
+    const concatArr = [...s1, ...s2]
+    const filterSet = new Set(concatArr);
+    return concatArr.length - Array.from(filterSet).length;
 }
