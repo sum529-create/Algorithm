@@ -1,12 +1,10 @@
 function factorial (num){
     let sum = 1;
-    let maxFac = 0;
     for(let i=1; i<=10; i++){
         sum *= i;
-        if(num === sum) return i
-        else if(num > sum) maxFac = i
-        else return maxFac
+        if(sum > num) return i - 1
     }
+    return 10;
 }
 function solution(n) {
     return factorial(n);
