@@ -8,5 +8,5 @@ function solution(array, n) {
         }
     })
     const idx = arr.indexOf(Math.min(...arr))
-    return [...array].sort((a,b) => a-b)[idx];
+    return sortArr[idx];
 }
