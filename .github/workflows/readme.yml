@@ -1,0 +1,30 @@
+name: Update README with solved problems
+
+on:
+  push:
+    paths:
+      - 'problems/*'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Update README
+      run: |
+        echo "## Solved Problems" >> README.md
+        echo "### Problems Solved Today" >> README.md
+        # 여기서 파일에서 문제 번호나 풀이 내용을 가져와서
+        # 해당 내용을 README에 추가하는 스크립트 작성
+        echo "- 문제 번호: 1234, 풀이: [링크](https://www.acmicpc.net/problem/1234)" >> README.md
+        
+    - name: Commit changes
+      run: |
+        git config --global user.name 'Your Name'
+        git config --global user.email 'your-email@example.com'
+        git add README.md
+        git commit -m 'Update README with new solved problems'
+        git push
